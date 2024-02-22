@@ -8,9 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isShowingSplashScreen = true
+    
     var body: some View {
         Group {
-            SplashScreenView()
+            if isShowingSplashScreen {
+                SplashScreenView()
+                    .transition(.opacity)
+            }
+            else {
+                MainView()
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                withAnimation {
+                    self.isShowingSplashScreen = false
+                }
+            }
         }
     }
 }
@@ -18,6 +34,16 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
+// MARK: - Main View
+struct MainView : View {
+    var body: some View {
+        ZStack {
+            
+        }
+    }
+}
+
 
 // MARK: - Splash screen view
 struct SplashScreenView : View {

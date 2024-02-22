@@ -50,6 +50,10 @@ struct MainView : View {
             }
             
             content
+            
+            if selectedPage >= 1 && selectedPage <= 3 {
+                TopNavView()
+            }
         }
     }
     

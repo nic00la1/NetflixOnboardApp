@@ -9,16 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            SplashScreenView()
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+}
+
+// MARK: - Splash screen view
+struct SplashScreenView : View {
+    var body: some View {
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
+            
+            LottieView(filename: "netflix")
+        }
+    }
 }

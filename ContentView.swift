@@ -63,7 +63,22 @@ struct MainView : View {
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
             .offset(y: 20)
+            
+            signInButton
         }
+    }
+    
+    private var signInButton : some View {
+        RoundedRectangle(cornerRadius: 10)
+            .frame(width: 380, height: 75)
+            .foregroundStyle(.buttonbg)
+            .overlay {
+                Text("SIGN IN")
+                    .fontWeight(.regular)
+                    .font(.system(size: 26))
+                    .foregroundStyle(.white)
+                    .shadow(color: .gray, radius: 1, x: 1, y: 1)
+            }
     }
 }
 

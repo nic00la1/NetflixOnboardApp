@@ -48,6 +48,21 @@ struct MainView : View {
                     BackgroundView()
                 }
             }
+            
+            content
+        }
+    }
+    
+    private var content: some View {
+        VStack {
+            TabView(selection: $selectedPage) {
+                ForEach(0..<testData.count, id: \.self) { index in
+                    CardView(card: testData[index])
+                        .tag(index)
+                }
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+            .offset(y: 20)
         }
     }
 }

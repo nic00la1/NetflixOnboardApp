@@ -37,6 +37,12 @@ struct ContentView: View {
 
 // MARK: - Main View
 struct MainView : View {
+    
+    init() {
+        UIPageControl.appearance().currentPageIndicatorTintColor = .red
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.white.withAlphaComponent(0.8)
+    }
+    
     @State private var selectedPage = 0
     var body: some View {
         ZStack {

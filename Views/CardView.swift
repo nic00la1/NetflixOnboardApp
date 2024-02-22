@@ -19,7 +19,7 @@ struct CardView: View {
                 .frame(width: 400, height: 400)
             
             Text(card.title)
-                .font(.system(size: 40))
+                .font(.system(size: 35))
                 .fontWeight(.bold)
                 .foregroundStyle(.white)
             
@@ -32,6 +32,7 @@ struct CardView: View {
                 .padding(5)
         }
         .padding()
+        .offset(x: 0, y: 0)
     }
 }
 

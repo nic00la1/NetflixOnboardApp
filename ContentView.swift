@@ -37,9 +37,17 @@ struct ContentView: View {
 
 // MARK: - Main View
 struct MainView : View {
+    @State private var selectedPage = 0
     var body: some View {
         ZStack {
+            Color.black
+                .ignoresSafeArea()
             
+            Group {
+                if selectedPage == 0 {
+                    BackgroundView()
+                }
+            }
         }
     }
 }
